@@ -1,0 +1,32 @@
+body {
+  background-image: url("../Assets/dan-gold-206211.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: column;
+}
+
+header {
+  height: 3rem;
+  margin: 0 6rem;
+  background-color: rgba(97, 140, 93, 1);
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 0 6rem;
+  background-color: rgba(228, 226, 226, 0.8);
+  min-height: 100vh;
+}
+
+.home-map {
+  height: 750px;
+  width: 1000px;
+  padding: 1rem;
+}
