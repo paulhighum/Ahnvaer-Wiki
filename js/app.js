@@ -7,8 +7,6 @@ let pageRaceCities = document.querySelector(".cities")
 fetch(APIurl)
   .then(resp => resp.json())
   .then(resp => {
-    console.log(resp)
-    console.log(pageRace)
     addRaceInfoToPage(resp)
     return
   })
@@ -47,9 +45,31 @@ function addRaceInfoToPage (raceArray) {
           pageRaceCities.textContent = `${citiesSentenceStart} cities of ${race.geography.cities[0]}, ${race.geography.cities[1]}, ${race.geography.cities[2]}, ${race.geography.cities[3]}, and ${race.geography.cities[4]}`
           break
         default:
-
       }
-      console.log(citiesSentenceStart)
     }
   })
+}
+
+document.querySelector("form").addEventListener("submit", event => {
+  event.preventDefault()
+  let formObj = new FormData(event.target)
+  let sendableRace = {
+    "name": formObj.get("name"),
+    "description": formObj.get("description"),
+    "geography": {
+      "regions": formObj.get("regions").split(", "),
+      "cities": formObj.get("cities").split(", ")
+    }
+  }
+  postNewRace(sendableRace)
+})
+
+function postNewRace(race){
+  fetch(APIurl, {
+    method: "POST",
+    body: JSON.stringify(race),
+    headers: new Headers({"Content-Type": "application/json"})
+  })
+    .then(resp => resp.json())
+    .then(resp => console.log(resp))
 }

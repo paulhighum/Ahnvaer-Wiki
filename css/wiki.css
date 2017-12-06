@@ -55,7 +55,7 @@ nav ul li {
   display: none;
   position: absolute;
   z-index: 1;
-  background-color: rgba(97, 140, 93, .85);
+  background-color: rgba(97, 140, 93, 1);
   width: 100px;
 }
 
@@ -103,4 +103,29 @@ h4 {
   max-height: 750px;
   max-width: 1000px;
   padding: 1rem;
+}
+
+form {
+  margin-top: 3rem;
+}
+
+input, label, textarea {
+    display: block;
+    width: 18rem;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+}
+
+textarea {
+  height: 8rem;
+}
+
+input[type="submit"] {
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1.5rem;
+    font-family: "Quicksand", sans-serif;
 }

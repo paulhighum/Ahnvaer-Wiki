@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+main{
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding: 2rem;
+}
+
+h3 {
+  padding-bottom: 2rem;
+}
+
+.description {
+  padding-bottom: 2rem;
+}
