@@ -1,18 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
 body {
   background-image: url("../Assets/dan-gold-206211.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-flow: column;
+  font-family: "Quicksand", sans-serif;
 }
 
 header {
-  height: 3rem;
+  height: 60px;
   margin: 0 6rem;
   background-color: rgba(97, 140, 93, 1);
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
 }
+
+.icon-h1 {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.small-crossed-swords {
+  height: 40px;
+  width: 40px;
+  padding: 0 .75rem 0 0;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 1.125rem;
+}
+
+nav ul li {
+  padding: 0 1rem;
+}
+
+.races h2 {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.race-dropdown{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(97, 140, 93, .85);
+  width: 100px;
+}
+
+.races:hover .race-dropdown {
+  display: block;
+}
+
+.race-dropdown ul {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.race-dropdown ul li {
+  padding: 1rem 0 0 0;
+}
+
+.race-dropdown ul li:last-child {
+  padding: 1rem 0 1rem 0;
+}
+
+.race-dropdown ul li a {
+}
+
 
 main {
   display: flex;
@@ -25,8 +91,16 @@ main {
   min-height: 100vh;
 }
 
+h3 {
+  font-size: 2.25rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
 .home-map {
-  height: 750px;
-  width: 1000px;
+  max-height: 750px;
+  max-width: 1000px;
   padding: 1rem;
 }
