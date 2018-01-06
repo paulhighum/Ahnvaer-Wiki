@@ -3,6 +3,7 @@ let pageRace = document.querySelector("h3").textContent
 let pageRaceDescription = document.querySelector(".description")
 let pageRaceRegions = document.querySelector(".regions")
 let pageRaceCities = document.querySelector(".cities")
+let $pAddedRace = document.querySelector(".added-race")
 
 fetch(APIurl)
   .then(resp => resp.json())
@@ -74,5 +75,9 @@ function postNewRace(race){
     headers: new Headers({"Content-Type": "application/json"})
   })
     .then(resp => resp.json())
-    .then(resp => console.log(resp))
+    .then(resp => {
+      console.log(resp)
+      $pAddedRace.textContent = `Congratulations you successfully added ${resp[resp.length - 1].name} to the world of Ahnvaer`
+      return resp
+    })
 }
