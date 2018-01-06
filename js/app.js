@@ -8,7 +8,7 @@ fetch(APIurl)
   .then(resp => resp.json())
   .then(resp => {
     addRaceInfoToPage(resp)
-    return
+    return resp
   })
 
 function addRaceInfoToPage (raceArray) {
@@ -26,6 +26,9 @@ function addRaceInfoToPage (raceArray) {
           pageRaceRegions.textContent = `${regionSentenceStart} ${race.geography.regions[0]} and ${race.geography.regions[1]} regions.`
           citiesSentenceStart = "Within these regions they make up a large percentage of the population in the "
           break
+        case 3:
+          pageRaceRegions.textContent = `${regionSentenceStart} ${race.geography.regions[0]}, ${race.geography.regions[1]}, and ${race.geography.regions[2]} regions.`
+          citiesSentenceStart = "Within these regions they make up a large percentage of the population in the "
         default:
       }
       switch (race.geography.cities.length) {
